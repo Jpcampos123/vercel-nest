@@ -11,7 +11,7 @@ export class BookService {
   }
 
   findAll() {
-    return `This action returns all book`;
+    return this.prismaService.books.findMany();
   }
 
   findOne(id: number) {
