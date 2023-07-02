@@ -7,11 +7,11 @@ import { PrismaService } from 'src/prisma/prisma.service';
 export class BookService {
   constructor(private readonly prismaService: PrismaService) {}
   async create(data) {
-    return await this.prismaService.books.create({ data });
+    return await this.prismaService.prismaClient.books.create({ data });
   }
 
   findAll() {
-    return this.prismaService.books.findMany();
+    return this.prismaService.prismaClient.books.findMany();
   }
 
   findOne(id: number) {
